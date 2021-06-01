@@ -2,7 +2,7 @@ import './App.css';
 import BackgroundHero from './images/chain.png';
 import BackgroundContact from './images/contact.png';
 
-import { Animated } from 'react-animated-css';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 
 import React, { useState, useEffect } from 'react';
@@ -10,7 +10,7 @@ import React, { useState, useEffect } from 'react';
 
 function Project(props) {
     return (
-        <Animated animationIn="fadeInLeft">
+        <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
             <div className="flex flex-wrap mb-8 md-mb-l5">
                 <div className="flex flex-wrap w-100pc md-w-30pc md-pr-8 p-5 content-between" style={{backgroundColor: props.backgroundColor}}>
                     <div className="mb-5 md-mb-0">
@@ -27,7 +27,7 @@ function Project(props) {
                     <img src={props.image} alt={props.name} />
                 </div>
             </div>
-        </Animated>
+        </ScrollAnimation>
     );
 }
 
@@ -95,16 +95,15 @@ function App() {
         <div className="App m-4 md-m-8">
             <div className="flex flex-wrap bg-light-gray" style={{ height: '90vh' }}>
                 <div className="w-100pc md-w-50pc p-8">
-                    <div className="w-75pc h-100pc flex flex-wrap content-between">
-                        <Animated animationIn="fadeInLeft" isVisible={true}>
+                        <div className="w-75pc h-100pc flex flex-wrap content-between">
                             <h1>Anderson Joseph - <br /> Desarrollador Web</h1>
-                        </Animated>
-                        <Animated animationIn="fadeInUp" isVisible={true}>
-                            <p>
-                                ¡Hola!👋 Soy un <strong>desarrollador web</strong>, estudiante de último año de <strong>ingeniería de sistemas</strong>. Me enfoco crear <strong>web apps, API's, y plugins.</strong> Sin dejar de lado el diseño y la experiencia de usuario.
-                            </p>
-                        </Animated>
-                    </div>
+
+                            <ScrollAnimation animateIn="fadeInLeft">
+                                <p>
+                                    ¡Hola!👋 Soy un <strong>desarrollador web</strong>, estudiante de último año de <strong>ingeniería de sistemas</strong>. Me enfoco crear <strong>web apps, API's, y plugins.</strong> Sin dejar de lado el diseño y la experiencia de usuario.
+                                </p>
+                            </ScrollAnimation>
+                        </div>
                 </div>
 
                 <div className="w-100pc md-w-50pc" style={{ backgroundImage: "url(" + BackgroundHero + ")", backgroundSize: 'cover'}}>
@@ -113,20 +112,22 @@ function App() {
             </div>
 
             <div className="mt-l5">
-                <Animated animationIn="fadeInRight" isVisible={true}>
+                <ScrollAnimation animateIn="fadeIn" animateOut="fadeOut">
                     <p className="fs-m4 md-fs-l4 poppins text-center md-text-left fw-800">
                         <u>
                             Sitios web a medida📐 - Diseño efectivo de interfaz🖌 - EComerce💰 - Rediseños🎨 - Optimizaciones 🚀 - Y más.
                         </u>
                     </p>
-                </Animated>
+                </ScrollAnimation>
             </div>
 
             <div className="mt-l5 mb-8">
                 <div className="flex flex-wrap items-center">
                     <h2 className="fs-l1 w-100pc md-w-auto">Proyectos 🖥</h2>
                     <span className="w-100pc md-w-l5 inline-block w-l5 h-1 ml-0 md-mr-5 md-ml-5" style={{ backgroundColor: '#29243B' }}></span>
-                    <p><strong>He colaborado, trabajado y ayudado a 40+ empresas a mejorar sus ventas y su presencia en internet</strong></p>
+                    <ScrollAnimation animateIn="fadeInRight">
+                        <p><strong>He colaborado, trabajado y ayudado a 40+ empresas a mejorar sus ventas y su presencia en internet</strong></p>
+                    </ScrollAnimation>
                 </div>
             </div>
 
@@ -171,7 +172,9 @@ function App() {
                 <div className="flex flex-wrap items-center">
                     <h2 className="fs-l1 w-100pc md-w-auto">Blog 📝</h2>
                     <span className="w-100pc md-w-l5 inline-block w-l5 h-1 ml-0 md-mr-5 md-ml-5" style={{ backgroundColor: '#29243B' }}></span>
-                    <p><strong>Acumulo +25K Visitas en mis artículos sobre desarrollo web</strong></p>
+                    <ScrollAnimation animateIn="fadeInRight">
+                        <p><strong>Acumulo +25K Visitas en mis artículos sobre desarrollo web</strong></p>
+                    </ScrollAnimation>
                 </div>
             </div>
             
@@ -181,7 +184,9 @@ function App() {
                 <div className="flex flex-wrap items-center">
                     <h2 className="fs-l1 w-100pc md-w-auto">Contáctame 📞</h2>
                     <span className="w-100pc md-w-l5 inline-block w-l5 h-1 ml-0 md-mr-5 md-ml-5" style={{ backgroundColor: '#29243B' }}></span>
-                    <p><strong>¡Envíame tu propuesta de proyecto y trabajemos juntos!</strong></p>
+                    <ScrollAnimation animateIn="fadeInRight">
+                        <p><strong>¡Envíame tu propuesta de proyecto y trabajemos juntos!</strong></p>
+                    </ScrollAnimation>
                 </div>
             </div>
 
@@ -205,7 +210,9 @@ function App() {
                         </div>
 
                         <div className="mb-5 text-center">
-                            <button className="bg-primary bw-0 white px-8 py-3 fw-bold fs-s1 w-auto md-w-25pc" type="submit">Enviar</button>
+                            <ScrollAnimation animateIn="shake">
+                                <button className="bg-primary bw-0 white px-8 py-3 fw-bold fs-s1 w-auto md-w-25pc" type="submit">Enviar</button>
+                            </ScrollAnimation>
                         </div>
 
                     </form>
