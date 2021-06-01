@@ -11,14 +11,20 @@ import React, { useState, useEffect } from 'react';
 function Project(props) {
     return (
         <Animated animationIn="fadeInLeft">
-            <div className="w-90pc">
-                <img className="mb-5" src={props.image} alt={props.name} />
-                <a href={props.link}>
-                    <h3>{props.name}</h3>
-                </a>
-                <p>{props.desc}</p>
-                <div className="mt-5">
-                    {props.technologies.map((tech, i) => <small key={i + props.name} className="bg-accent p-2 white mr-3 mb-3 inline-block">{tech}</small>)}
+            <div className="flex flex-wrap mb-8 md-mb-l5">
+                <div className="flex flex-wrap w-100pc md-w-30pc md-pr-8 content-between">
+                    <div>
+                        <a href={props.link}>
+                            <h3 className="mb-2">{props.name}</h3>
+                        </a>
+                        <p>{props.desc}</p>
+                    </div>
+                    <div>
+                        {props.technologies.map((tech, i) => <small key={i + props.name} className="bg-accent p-2 white mr-3 mb-3 inline-block">{tech}</small>)}
+                    </div>
+                </div>
+                <div className="w-100pc md-w-70pc" style={{boxShadow: "-6px 6px #29243b"}}>
+                    <img src={props.image} alt={props.name} />
                 </div>
             </div>
         </Animated>
@@ -63,7 +69,7 @@ function Blog(props) {
     return (
         <div className="flex flex-wrap justify-between">
 
-            <div className="w-100pc md-w-40pc mb-5 md-mb-0">
+            <div className="w-100pc md-w-50pc mb-5 md-mb-0">
                 <div className="bg-light-gray p-5">
                     <a href={firstPost.url}>
                         <img className="mb-5" src={firstPost.cover_image} alt={firstPost.title} />
@@ -74,7 +80,7 @@ function Blog(props) {
                 </div>
             </div>
 
-            <div className="w-100pc md-w-40pc">
+            <div className="w-100pc md-w-50pc md-pl-5">
                 {posts.map((post, i) => <BlogPost key={post + i} name={post.title} image={post.cover_image} link={post.url} />)}
             </div>
 
@@ -108,7 +114,7 @@ function App() {
 
             <div className="mt-l5">
                 <Animated animationIn="fadeInRight" isVisible={true}>
-                    <p className="fs-m4 md-fs-l4 poppins text-center md-text-left">
+                    <p className="fs-m4 md-fs-l4 poppins text-center md-text-left fw-800">
                         <u>
                             Sitios web a medida📐 - Diseño efectivo de interfaz🖌 - EComerce💰 - Rediseños🎨 - Optimizaciones 🚀 - Y más.
                         </u>
@@ -124,53 +130,38 @@ function App() {
                 </div>
             </div>
 
-            <div className="flex flex-wrap justify-between">
+            <Project
+                name="Ecosoluciones"
+                desc="Ecommerce de productos químicos. Trabajé en el diseño, desarrollo del sitio e integraciones con sus empresas de envío y transporte"
+                technologies={['WordPress', 'Elementor', 'WooCommerce']}
+                image="images/projects/ecosoluciones.png"
+                link="https://www.ecosolucionesquimicas.es"
+            />
 
-                <div className="w-100pc md-w-40pc">
-                    <Project
-                        name="Ecosoluciones"
-                        desc="Ecommerce de productos químicos. Trabajé en el diseño, desarrollo del sitio e integraciones con sus empresas de envío y transporte"
-                        technologies={['WordPress', 'Elementor', 'WooCommerce']}
-                        image="images/projects/ecosoluciones.png"
-                        link="https://www.ecosolucionesquimicas.es"
-                    />
-                </div>
+            <Project
+                name="Regaloporquesi"
+                desc="Tineda online de regalos. Se trató de un proyecto enfocado a renovar la marca desde 0. La empresa pasaba por un momento de rebranding y buscaban que el diseño nuevo de la web emitiera los mensajes de identidad de la marca"
+                technologies={['WordPress', 'WooCommerce', 'Elementor']}
+                image="images/projects/regalo.png"
+                link="https://regalo.neopruebas.com/nueva-web/"
+            />
 
-                <div className="w-100pc md-mt-l5 md-w-40pc">
-                    <Project
-                        name="Regaloporquesi"
-                        desc="Tineda online de regalos. Se trató de un proyecto enfocado a renovar la marca desde 0. La empresa pasaba por un momento de rebranding y buscaban que el diseño nuevo de la web emitiera los mensajes de identidad de la marca"
-                        technologies={['WordPress', 'WooCommerce', 'Elementor']}
-                        image="images/projects/regalo.png"
-                        link="https://regalo.neopruebas.com/nueva-web/"
-                    />
-                </div>
+            <Project
+                name="KRT Racing"
+                desc="Ecommerce dedicado a vender piezas y accesorios para automóviles. El proyecto se trató de un rediseño para un web antigua, estaba desarrollada en una plataforma que ya no contaba con soporte. El desafío estuvo en adaptar los plugins antiguos para que funcionasen con WordPress"
+                technologies={['Elementor', 'WooCommerce', 'PHP', 'Desarrollo de Plugins']}
+                image="images/projects/krt.png"
+                link="https://krt-racing.com"
+            />
 
-            </div>
+            <Project
+                name="SanchoFerrer"
+                desc="Una web de contacto y showcase de los proyectos de una arquitecta. El diseño de esta web está muy orientado a los detalles, proporción, simetría y minimalismo. Haciendo referencia a la perfección de los detalles que existen en un buen proyecto arquitectónico"
+                technologies={['WordPress', 'WooCommerce', 'Elementor']}
+                image="images/projects/SanchoFerrer.png"
+                link="https://www.sanchoferrerarquitectura.com"
+            />
 
-            <div className="flex flex-wrap justify-between">
-
-                <div className="w-100pc md-w-40pc">
-                    <Project
-                        name="KRT Racing"
-                        desc="Ecommerce dedicado a vender piezas y accesorios para automóviles. El proyecto se trató de un rediseño para un web antigua, estaba desarrollada en una plataforma que ya no contaba con soporte. El desafío estuvo en adaptar los plugins antiguos para que funcionasen con WordPress"
-                        technologies={['Elementor', 'WooCommerce', 'PHP', 'Desarrollo de Plugins']}
-                        image="images/projects/krt.png"
-                        link="https://krt-racing.com"
-                    />
-                </div>
-
-                <div className="w-100pc md-mt-l5 md-w-40pc">
-                    <Project
-                        name="SanchoFerrer"
-                        desc="Una web de contacto y showcase de los proyectos de una arquitecta. El diseño de esta web está muy orientado a los detalles, proporción, simetría y minimalismo. Haciendo referencia a la perfección de los detalles que existen en un buen proyecto arquitectónico"
-                        technologies={['WordPress', 'WooCommerce', 'Elementor']}
-                        image="images/projects/SanchoFerrer.png"
-                        link="https://www.sanchoferrerarquitectura.com"
-                    />
-                </div>
-
-            </div>
 
             <div className="mt-l5 mb-8">
                 <div className="flex flex-wrap items-center">
@@ -179,7 +170,6 @@ function App() {
                     <p><strong>Acumulo +25K Visitas en mis artículos sobre desarrollo web</strong></p>
                 </div>
             </div>
-
             
             <Blog />
 
