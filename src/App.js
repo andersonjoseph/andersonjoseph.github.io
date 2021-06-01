@@ -158,7 +158,7 @@ function App() {
                 name="SanchoFerrer"
                 desc="Una web de contacto y showcase de los proyectos de una arquitecta. El diseño de esta web está muy orientado a los detalles, proporción, simetría y minimalismo. Haciendo referencia a la perfección de los detalles que existen en un buen proyecto arquitectónico"
                 technologies={['WordPress', 'WooCommerce', 'Elementor']}
-                image="images/projects/SanchoFerrer.png"
+                image="images/projects/sanchoferrer.png"
                 link="https://www.sanchoferrerarquitectura.com"
             />
 
