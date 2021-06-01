@@ -12,8 +12,8 @@ function Project(props) {
     return (
         <Animated animationIn="fadeInLeft">
             <div className="flex flex-wrap mb-8 md-mb-l5">
-                <div className="flex flex-wrap w-100pc md-w-30pc md-pr-8 content-between">
-                    <div>
+                <div className="flex flex-wrap w-100pc md-w-30pc md-pr-8 p-5 content-between" style={{backgroundColor: props.backgroundColor}}>
+                    <div className="mb-5 md-mb-0">
                         <a href={props.link}>
                             <h3 className="mb-2">{props.name}</h3>
                         </a>
@@ -136,6 +136,7 @@ function App() {
                 technologies={['WordPress', 'Elementor', 'WooCommerce']}
                 image="images/projects/ecosoluciones.png"
                 link="https://www.ecosolucionesquimicas.es"
+                backgroundColor="#e1fff1"
             />
 
             <Project
@@ -144,6 +145,7 @@ function App() {
                 technologies={['WordPress', 'WooCommerce', 'Elementor']}
                 image="images/projects/regalo.png"
                 link="https://regalo.neopruebas.com/nueva-web/"
+                backgroundColor="#ecf1fb"
             />
 
             <Project
@@ -152,6 +154,7 @@ function App() {
                 technologies={['Elementor', 'WooCommerce', 'PHP', 'Desarrollo de Plugins']}
                 image="images/projects/krt.png"
                 link="https://krt-racing.com"
+                backgroundColor="#f5f5f5"
             />
 
             <Project
@@ -160,6 +163,7 @@ function App() {
                 technologies={['WordPress', 'WooCommerce', 'Elementor']}
                 image="images/projects/sanchoferrer.png"
                 link="https://www.sanchoferrerarquitectura.com"
+                backgroundColor="#fff3e7"
             />
 
 
