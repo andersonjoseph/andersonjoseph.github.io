@@ -210,7 +210,7 @@ function App() {
                         </div>
 
                         <div className="mb-5 text-center">
-                            <ScrollAnimation animateIn="shake">
+                            <ScrollAnimation animateIn="shake" animateOnce={true}>
                                 <button className="bg-primary bw-0 white px-8 py-3 fw-bold fs-s1 w-auto md-w-25pc" type="submit">Enviar</button>
                             </ScrollAnimation>
                         </div>
