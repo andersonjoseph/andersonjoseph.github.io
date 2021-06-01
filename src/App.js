@@ -134,7 +134,7 @@ function App() {
                 name="Ecosoluciones"
                 desc="Ecommerce de productos químicos. Trabajé en el diseño, desarrollo del sitio e integraciones con sus empresas de envío y transporte"
                 technologies={['WordPress', 'Elementor', 'WooCommerce']}
-                image="images/projects/ecosoluciones.png"
+                image="images/projects/ecosoluciones.webp"
                 link="https://www.ecosolucionesquimicas.es"
                 backgroundColor="#e1fff1"
             />
@@ -143,7 +143,7 @@ function App() {
                 name="Regaloporquesi"
                 desc="Tineda online de regalos. Se trató de un proyecto enfocado a renovar la marca desde 0. La empresa pasaba por un momento de rebranding y buscaban que el diseño nuevo de la web emitiera los mensajes de identidad de la marca"
                 technologies={['WordPress', 'WooCommerce', 'Elementor']}
-                image="images/projects/regalo.png"
+                image="images/projects/regalo.webp"
                 link="https://regalo.neopruebas.com/nueva-web/"
                 backgroundColor="#ecf1fb"
             />
@@ -152,7 +152,7 @@ function App() {
                 name="KRT Racing"
                 desc="Ecommerce dedicado a vender piezas y accesorios para automóviles. El proyecto se trató de un rediseño para un web antigua, estaba desarrollada en una plataforma que ya no contaba con soporte. El desafío estuvo en adaptar los plugins antiguos para que funcionasen con WordPress"
                 technologies={['Elementor', 'WooCommerce', 'PHP', 'Desarrollo de Plugins']}
-                image="images/projects/krt.png"
+                image="images/projects/krt.webp"
                 link="https://krt-racing.com"
                 backgroundColor="#f5f5f5"
             />
@@ -161,7 +161,7 @@ function App() {
                 name="SanchoFerrer"
                 desc="Una web de contacto y showcase de los proyectos de una arquitecta. El diseño de esta web está muy orientado a los detalles, proporción, simetría y minimalismo. Haciendo referencia a la perfección de los detalles que existen en un buen proyecto arquitectónico"
                 technologies={['WordPress', 'WooCommerce', 'Elementor']}
-                image="images/projects/sanchoferrer.png"
+                image="images/projects/sanchoferrer.webp"
                 link="https://www.sanchoferrerarquitectura.com"
                 backgroundColor="#fff3e7"
             />
