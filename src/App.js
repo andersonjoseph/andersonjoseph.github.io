@@ -23,7 +23,7 @@ function Project(props) {
                         {props.technologies.map((tech, i) => <small key={i + props.name} className="bg-accent p-2 white mr-3 mb-3 inline-block">{tech}</small>)}
                     </div>
                 </div>
-                <div className="w-100pc md-w-70pc" style={{boxShadow: "-6px 6px #29243b"}}>
+                <div className="w-100pc md-w-70pc" style={{boxShadow: "6px 6px #29243b"}}>
                     <img src={props.image} alt={props.name} />
                 </div>
             </div>
