@@ -28,22 +28,23 @@ function Projects() {
 
     return(
         <div className="relative" style={{marginTop: "10em"}}>
-            <h2 className="text-center">Proyectos</h2>
             <ScrollTrigger start="-200px center" end="bottom top" scrub={1}>
-                <Tween from={{x: -100}} to={{x: -800}} >
+                <Tween from={{ x: -100 }} to={{ x: -800 }} >
                     <div className="absolute left-0 top-0">
-                        <h2 className="opacity-10" style={{width: "max-content", fontSize: "6em"}}>
-                            Proyectos - 
-                            Proyectos - 
-                            Proyectos - 
-                            Proyectos - 
-                            Proyectos - 
+                        <h2 className="opacity-10 z--1" style={{ width: "max-content", fontSize: "6em" }}>
+                            Proyectos -
+                            Proyectos -
+                            Proyectos -
+                            Proyectos -
+                            Proyectos -
                         </h2>
                     </div>
                 </Tween>
             </ScrollTrigger>
 
-            <div style={{marginTop: "10em", marginBottom: "10em"}}>
+            <h2 className="text-center">Proyectos</h2>
+
+            <div style={{ marginTop: "10em", marginBottom: "10em" }}>
 
                 <ScrollTrigger start="-200px center" end="center center" scrub={1}>
                     <Tween from={{x: -500, opacity: 0}} to={{x:0, opacity: 1}}>
