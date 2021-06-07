@@ -28,7 +28,7 @@ h2 {
     color: #899878;
     text-transform: uppercase;
     font-weight: 900;
-    letter-spacing: 70px;
+    letter-spacing: 4em;
     margin-left: 1em;
 }
 
@@ -50,4 +50,35 @@ a {
 
 .hero-title span {
     display: inline-block !important;
+}
+
+.details-link {
+    text-transform: uppercase;
+    letter-spacing: 1em;
+    font-weight: 900;
+    margin-left: .5em;
+}
+
+
+label {
+    color: #F7F7F2;
+}
+
+input, textarea {
+    padding: .9em;
+    width: 100%;
+    background-color: #222725;
+    border: none;
+    color: #F7F7F2;
+    font-family: 'Open Sans', sans-serif;
+}
+
+button {
+    border: solid;
+    border-width: 1px;
+    color: #F7F7F2;
+    border-color: white;
+    background-color: #222725;
+    padding: .6em;
+    font-family: 'Open Sans', sans-serif;
 }
