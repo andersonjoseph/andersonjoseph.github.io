@@ -1,35 +1,65 @@
 import './App.css';
-import { Tween, ScrollTrigger } from 'react-gsap';
-import FOG from 'vanta/dist/vanta.fog.min';
+import { Tween, Timeline } from 'react-gsap';
+
+import { Route, useLocation, useRoute } from 'wouter';
 
 import {useState, useRef, useEffect} from 'react';
 
-import Hero from './Hero';
-import AboutMe from './AboutMe';
-import Services from './Services';
-import Projects from './Projects';
-import Contact from './Contact';
+import IndexPage from './index/indexPage';
+import ProjectPage from './project/projectPage';
 
+import { Transition } from "react-transition-group";
+
+function ExitTransition(props) {
+
+    return(
+        <Timeline
+            onComplete={props.onComplete}
+            target={
+                <div className="page-transition" style={{ backgroundColor: "#222725", height: "100%", width: "0%", position: "absolute", top: 0, right: 0, zIndex: "1" }}></div>
+            }
+        >
+            <Tween to={{ width: "100%" }} duration={.5} />
+            <Tween to={{ left: 0, width: "0%" }} duration={.5} />
+        </Timeline>
+    )
+}
+
+function AnimatedRoute(props) {
+    const [match, params] = useRoute("/proyecto");
+
+    return (
+        <Transition in={match} timeout={1000} onEnter={props.onEnter} unmountOnExit>
+            <ProjectPage />
+        </Transition>
+    )
+
+}
 
 function App() {
+
+    const [exitTransition, setExitTransition] = useState(false);
+
+    function handleEnter() {
+        setExitTransition(true);
+        console.log("aaaaaaaaaaaaa");
+    }
+
     return (
         <div className="App p-4 md-px-l5">
+            {
+                exitTransition && (
+                    <ExitTransition />
+                )
+            }
 
-                <Tween to={{ height: 0 }} delay={3}>
-                    <div style={{ backgroundColor: "#222725", height: "100%", position: "absolute", top: 0, left: 0, width: "100%", zIndex: "1" }}>
-                    </div>
-                </Tween>
+            <Route path="/">
+                <IndexPage />
+            </Route>
 
-                <Hero />
-                <AboutMe />
-                <Services />
-                <Projects />
-                <Contact />
-
-                <div className="text-center" style={{marginTop: "10em"}}>
-                    <small>2021 Anderson Joseph</small>
-                </div>
-
+            <Route path="/proyecto">
+                <AnimatedRoute onEnter={handleEnter} />
+            </Route>
         </div>
     );
 }

@@ -1,16 +1,16 @@
 import { Tween, ScrollTrigger } from 'react-gsap';
-import BlurryTilt from "./BlurryTilit";
+import BlurryTilt from "../BlurryTilit";
 
 
 function AboutMe() {
 
     return(
-        <div className="flex flex-wrap" style={{marginTop: "10em"}}>
+        <div id="init" className="flex flex-wrap" style={{marginTop: "10em"}}>
 
             <ScrollTrigger start="top bottom" end="bottom top" scrub={1}>
                 <Tween from={{y: 0}} to={{y: -100 }} duration={.5}>
                     <figure className="w-100pc md-w-40pc m-0 relative">
-                        <BlurryTilt src="" />
+                        <BlurryTilt src="images/rocket.png" />
                     </figure>
                 </Tween>
             </ScrollTrigger>

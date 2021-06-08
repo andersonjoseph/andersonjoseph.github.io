@@ -3,7 +3,7 @@ import { Tween, ScrollTrigger, SplitChars } from 'react-gsap';
 function Contact() {
 
     return(
-        <div className="flex flex-wrap" style={{ marginTop: "10em" }}>
+        <div id="contacto" className="flex flex-wrap" style={{ marginTop: "10em" }}>
 
             <div className="w-100pc md-w-10pc"></div>
 

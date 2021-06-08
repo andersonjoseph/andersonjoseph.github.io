@@ -10,6 +10,24 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
 
+    <style>
+      body {
+        position:relative;
+        z-index: 2;
+      }
+      body::before {
+        content:"";
+        position:absolute;
+        left:0;
+        top:0;
+        background-image: url("images/bg.png");
+        opacity: .1;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    </style>
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta

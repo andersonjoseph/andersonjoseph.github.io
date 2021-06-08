@@ -1,5 +1,6 @@
 import { Tween, ScrollTrigger } from 'react-gsap';
-import BlurryTilt from "./BlurryTilit";
+import { Link } from 'wouter'
+import BlurryTilt from "../BlurryTilit";
 
 function Project(props) {
     return(
@@ -15,9 +16,9 @@ function Project(props) {
             <div className="w-100pc md-w-50pc">
                 <h2 className="mb-l2">{props.title}</h2>
 
-                <a href={props.link} className="details-link">
+                <Link to="/proyecto" className="details-link">
                     Ver Detalles
-                </a>
+                </Link>
             </div>
         </div>
     )

@@ -27,12 +27,14 @@ function Hero() {
                 <div className="flex justify-between">
                     <div className="">
                         <Tween from={{y: -10}} to={{y: 10}} duration={2} repeat={-1} yoyo={true}>
+                        <a className="fw-900" href="#init">
                             <img src="images/arrow.svg" />
+                        </a>
                         </Tween>
                     </div>
 
                     <div className="">
-                        <a className="fw-900" href="#">
+                        <a className="fw-900" href="#contacto">
                             CON<br />
                                 TAC<br />
                                 TAR<br />
