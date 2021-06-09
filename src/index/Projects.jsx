@@ -1,5 +1,5 @@
 import { Tween, ScrollTrigger } from 'react-gsap';
-import { Link } from 'wouter'
+import { Link } from 'react-router-dom'
 import BlurryTilt from "../BlurryTilit";
 
 function Project(props) {
@@ -11,10 +11,15 @@ function Project(props) {
                 <div className="w-100pc md-w-10pc"></div> 
             }
             <figure className="w-100pc md-w-40pc">
-                <BlurryTilt src={props.image} />
+                <BlurryTilt alt={props.title} src={props.image} />
             </figure>
-            <div className="w-100pc md-w-50pc">
-                <h2 className="mb-l2">{props.title}</h2>
+            <div className="w-100pc md-w-50pc z-10">
+
+                <h2 className="mb-l2">
+                    <Link to="/proyecto" style={{fontSize: "inherit", color: "inherit", fontFamily: "inherit"}}>
+                        {props.title}
+                    </Link>
+                </h2>
 
                 <Link to="/proyecto" className="details-link">
                     Ver Detalles
@@ -30,16 +35,14 @@ function Projects() {
     return(
         <div className="relative" style={{marginTop: "10em"}}>
             <ScrollTrigger start="-200px center" end="bottom top" scrub={1}>
-                <Tween from={{ x: -100 }} to={{ x: -800 }} >
-                    <div className="absolute left-0 top-0">
-                        <h2 className="opacity-10 z--1" style={{ width: "max-content", fontSize: "6em" }}>
+                <Tween from={{ x: -90 }} to={{ x: -600 }} >
+                        <h2 className="absolute left-0 top-0 opacity-10 z--1" style={{fontSize: "6em", whiteSpace: "nowrap" }}>
                             Proyectos -
                             Proyectos -
                             Proyectos -
                             Proyectos -
                             Proyectos -
                         </h2>
-                    </div>
                 </Tween>
             </ScrollTrigger>
 

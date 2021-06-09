@@ -1,6 +1,6 @@
 import { Tween, SplitChars } from 'react-gsap';
 import Contact from '../Contact';
-import { Link } from 'wouter'
+import { Link } from 'react-router-dom'
 
 function ProjectPage() {
 
@@ -14,8 +14,8 @@ function ProjectPage() {
             <div className="md-w-80pc">
 
               <div className="mb-l5">
-                <Link to="/" className="inline-flex details-link">
-                  <img style={{width: "2em"}} src="images/arrow-right.svg" />
+                <Link to="/" className="inline-flex items-center details-link">
+                  <img alt="flecha" style={{width: "2em"}} src="images/arrow-right.svg" />
                   <span className="ml-5" style={{fontSize: "2em", color: "inherit"}}>Atrás</span>
                 </Link>
               </div>

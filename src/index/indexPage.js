@@ -1,5 +1,3 @@
-import { Tween, Timeline } from 'react-gsap';
-
 import Hero from './Hero';
 import AboutMe from './AboutMe';
 import Services from './Services';

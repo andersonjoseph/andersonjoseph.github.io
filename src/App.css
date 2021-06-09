@@ -1,11 +1,14 @@
 html {
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 body {
     font-size: 1.3vw;
     background-color: #121113;
+}
+
+#root {
+  overflow-x: hidden;
 }
 
 h1,h2,h3 {
@@ -103,4 +106,31 @@ a {
     left: 0;
     right: auto;
     width: 100%;
+}
+
+.enter-active {
+    display: none;
+}
+
+/* mobile */
+
+@media screen and (max-width : 420px)
+{
+  body {
+      font-size: 2vw;
+  }
+
+  p,span,small,label, button, input, textarea, li, a {
+      font-size: 2em;
+  }
+
+  .subtitle p { 
+    letter-spacing: 1em;
+    margin-left: 0;
+  }
+  
+  .details-link {
+    margin-left: 0;
+  }
+
 }

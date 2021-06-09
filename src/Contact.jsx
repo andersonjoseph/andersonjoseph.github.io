@@ -25,7 +25,7 @@ function Contact() {
                             mailfence.com
                         </h2>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur odit mollitia quo iste laboriosam ea nihil omnis. Numquam, et ex quia minima a molestiae autem, magnam vel iusto vitae tempora.
+                            Actualmente estoy disponible para proyectos freelance. Di hola junto con una descripción sobre tu proyecto, y comencemos a trabajar juntos 🙌
                         </p>
                     </Tween>
                 </ScrollTrigger>

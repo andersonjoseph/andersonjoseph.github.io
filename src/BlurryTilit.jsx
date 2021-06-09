@@ -4,10 +4,10 @@ function BlurryTilt(props) {
     return(
         <div>
                 <Tilt>
-                    <img className="absolute h-100pc opacity-50" src={props.src} />
+                    <img alt={props.alt} className="absolute h-100pc w-100pc opacity-50" src={props.src} />
                 </Tilt>
                 <Tilt>
-                    <img className="opacity-50" src={props.src} />
+                    <img alt={props.alt} className="opacity-50 h-100pc w-100pc" src={props.src} />
                 </Tilt>
         </div>
 

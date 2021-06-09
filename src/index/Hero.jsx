@@ -25,19 +25,19 @@ function Hero() {
                 </div>
 
                 <div className="flex justify-between">
-                    <div className="">
-                        <Tween from={{y: -10}} to={{y: 10}} duration={2} repeat={-1} yoyo={true}>
-                        <a className="fw-900" href="#init">
-                            <img src="images/arrow.svg" />
-                        </a>
-                        </Tween>
-                    </div>
+                    <Tween from={{y: -10}} to={{y: 10}} duration={2} repeat={-1} yoyo={true}>
+                        <div className="">
+                            <a className="fw-900" href="#init">
+                                <img alt="flecha" style={{width: "5em"}} src="images/arrow.svg" />
+                            </a>
+                        </div>
+                    </Tween>
 
-                    <div className="">
+                    <div className="hidden md-block">
                         <a className="fw-900" href="#contacto">
                             CON<br />
-                                TAC<br />
-                                TAR<br />
+                            TAC<br />
+                            TAR<br />
                         </a>
                     </div>
                 </div>
