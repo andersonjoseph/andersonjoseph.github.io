@@ -1,7 +1,6 @@
 import { Tween, ScrollTrigger } from 'react-gsap';
 import { Link } from 'react-router-dom'
 import { gsap } from "gsap";
-import BlurryTilt from "../BlurryTilit";
 import { useRef } from 'react';
 
 function flip(elements, changeFunc, vars) {
@@ -72,20 +71,20 @@ function Project(props) {
 
             <figure className="w-40pc">
 
-                <Link onClick={handleProjectClick} to="/proyecto">
-                    <img className="w-100pc h-100pc" ref={imageRef} onClick={handleProjectClick} alt={props.title} src={props.image} />
+                <Link onClick={handleProjectClick} to={props.link}>
+                    <img className="w-100pc h-100pc object-cover" ref={imageRef} alt={props.title} src={props.image} />
                 </Link>
             </figure>
 
             <div ref={textRef} className="w-100pc md-w-50pc z-10">
 
                 <h2 className="mb-l2">
-                    <Link onClick={handleProjectClick} to="/proyecto" style={{fontSize: "inherit", color: "inherit", fontFamily: "inherit"}}>
+                    <Link onClick={handleProjectClick} to={props.link} style={{fontSize: "inherit", color: "inherit", fontFamily: "inherit"}}>
                         {props.title}
                     </Link>
                 </h2>
 
-                <Link onClick={handleProjectClick} to="/proyecto" className="details-link">
+                <Link onClick={handleProjectClick} to={props.link} className="details-link">
                     Ver Detalles
                 </Link>
 
@@ -122,23 +121,7 @@ function Projects() {
                 <ScrollTrigger start="-200px center" end="center center" scrub={1}>
                     <Tween from={{x: -500, opacity: 0}} to={{x:0, opacity: 1}}>
                         <div>
-                            <Project title="Otra Mirada" link="#" image="https://preview.redd.it/xbmku3trc9571.png?width=640&height=422&crop=smart&auto=webp&s=8c1dce0cf48eb81ea1874c2179888b8e56788b75" />
-                        </div>
-                    </Tween>
-                </ScrollTrigger>
-
-                <ScrollTrigger start="-200px center" end="center center" scrub={1}>
-                    <Tween from={{ x: 500, opacity: 0 }} to={{ x: 0, opacity: 1 }}>
-                        <div>
-                            <Project offset={true} title="Otra Mirada" link="#" image="https://assets.awwwards.com/awards/media/cache/thumb_417_299/submissions/2021/04/60824d746302e377590395.jpg" />
-                        </div>
-                    </Tween>
-                </ScrollTrigger>
-
-                <ScrollTrigger start="-200px center" end="center center" scrub={1}>
-                    <Tween from={{x: -500, opacity: 0}} to={{x:0, opacity: 1}}>
-                        <div>
-                            <Project title="Otra Mirada" link="#" image="https://assets.awwwards.com/awards/media/cache/thumb_417_299/submissions/2021/04/60824d746302e377590395.jpg" />
+                            <Project title="Otra Mirada" link="/proyecto/otramirada" image="/images/projects/otramirada/cover.webp" />
                         </div>
                     </Tween>
                 </ScrollTrigger>

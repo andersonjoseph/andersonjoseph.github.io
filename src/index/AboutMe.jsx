@@ -1,7 +1,6 @@
 import { Tween, ScrollTrigger } from 'react-gsap';
 import BlurryTilt from "../BlurryTilit";
 
-
 function AboutMe() {
 
     return(
@@ -23,13 +22,12 @@ function AboutMe() {
                         <h2 className="mb-l1">Construyo aplicaciones y sitios web</h2>
 
                         <p>
-                            ¡Hola!👋 Soy un desarrollador web, estudiante de último año de ingeniería de sistemas. He ayudado a 40+ empresas y equipos a desarrollar sitios y aplicaciones web que si funcionen. 
+                            ¡Hola!👋 Soy Anderson. He ayudado a <b>40+ empresas y equipos</b> a desarrollar aplicaciones y sitios web interactivos que ayuden a impulsar la presencia de sus marcas en Internet.
+                            <br/>
                         </p>
-
                     </Tween>
                 </ScrollTrigger>
             </div>
-
         </div>
     )
 }
