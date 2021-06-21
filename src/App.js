@@ -18,7 +18,7 @@ function AnimatedRoute(props) {
             {({ match }) => (
                 <CSSTransition
                     in={match != null}
-                    timeout={2000}
+                    timeout={3000}
                     onExit={props.onExit}
                     onEntered={props.onEnter}
                     unmountOnExit
@@ -31,53 +31,17 @@ function AnimatedRoute(props) {
     )
 }
 
-function ExitAnimation() {
-    
-    return(
-        <Timeline 
-            target={ 
-                <>
-                    <div className="absolute right-0 top-0 h-100pc z-10" style={{backgroundColor: "#899878"}} ></div> 
-                    <div className="absolute right-0 top-0 h-100pc z-10" style={{backgroundColor: "#121113"}} ></div> 
-                </>
-            }
-        >
-
-            <Tween to={{width: "100%"}} target={0} duration={1}/>
-            <Tween to={{width: "100%"}} target={1} position={0.4}/>
-            <Tween to={{width: "0", left: 0}} target={0} duration={1} />
-            <Tween to={{width: "0", left: 0}} target={1} duration={1}/>
-        </Timeline>
-    )
-
-}
-
 function App() {
-
-    const [exitAnimation, setExitAnimation] = useState(false);
-
-    function animateExit(node) {
-        setTimeout(()=> window.scrollTo(0, 0), 1000);
-        setExitAnimation(true);
-    }
-
-    function animateEnter(node) {
-        setTimeout(()=> setExitAnimation(false), 1000);
-    }
 
     return (
         <div className="App p-4 md-px-l5">
 
-            {
-                exitAnimation && <ExitAnimation />
-            }
-
             <Router>
-                <AnimatedRoute path="/" onEnter={animateEnter} onExit={animateExit}>
+                <AnimatedRoute path="/">
                     <IndexPage />
                 </AnimatedRoute>
 
-                <AnimatedRoute path="/proyecto" onEnter={animateEnter} onExit={animateExit}>
+                <AnimatedRoute path="/proyecto">
                     <ProjectPage />
                 </AnimatedRoute>
             </Router>

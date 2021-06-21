@@ -112,6 +112,35 @@ a {
     display: none;
 }
 
+.circle-color span {
+    transition: .5s;
+    transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    cursor: pointer;
+    position: relative;
+}
+
+.circle-color span:nth-child(1) { 
+    z-index: 3;
+}
+
+.circle-color span:nth-child(2) { 
+    transform: translateY(-5em);
+    z-index: 2;
+}
+.circle-color span:nth-child(3) { 
+    transform: translateY(-10em);
+    z-index: 1;
+}
+
+.circle-color:hover span:nth-child(2) { 
+    transform: translateY(0);
+}
+
+.circle-color:hover span:nth-child(3) { 
+    transform: translateY(0);
+}
+
+
 /* mobile */
 
 @media screen and (max-width : 420px)
@@ -134,3 +163,4 @@ a {
   }
 
 }
+
