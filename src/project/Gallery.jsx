@@ -22,7 +22,7 @@ function Gallery(props) {
         </Tween>
       </ScrollTrigger>
 
-      <video autoplay muted loop className="mb-l10">
+      <video autoPlay muted loop className="mb-l10">
         <source src={props.video} type="video/webm" />
       </video>
 
