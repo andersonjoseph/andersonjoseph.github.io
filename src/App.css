@@ -43,8 +43,8 @@ input, textarea {
 button {
     border: solid;
     border-width: 1px;
-    border-color: white;
-    background-color: #222725;
+    border-color: #CC8E00;
+    background-color: transparent;
     padding: .6em;
     font-size: 1em;
 }
