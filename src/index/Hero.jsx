@@ -6,25 +6,24 @@ function Hero() {
 
             <div>
                 <div className="hero-title flex flex-wrap">
-                    <div className="w-100pc md-w-10pc"></div> 
                     <div className="md-w-80pc">
 
-                        <div className="subtitle">
+                        <div>
                             <Tween from={{y: -500}}  stagger={0.2}>
-                                <SplitChars wrapper={<p className="inline-block"/>}>
-                                    Portafolios
+                                <SplitChars wrapper={<h3 className="inline-block"/>}>
+                                    Anderson Joseph
                                 </SplitChars>
                             </Tween>
                         </div>
 
                         <Tween from={{opacity: 0, y: 50}} to={{y: 0, opacity: 1}} duration={2}>
-                            <h1>Anderson Joseph - Desarrollador Web </h1>
+                            <h1>Desarrollo sitios web para marcas creativas</h1>
                         </Tween>
 
                     </div>
                 </div>
 
-                <div className="flex justify-between">
+                <div className="flex justify-between items-center">
                     <Tween from={{y: -10}} to={{y: 10}} duration={2} repeat={-1} yoyo={true}>
                         <div className="">
                             <a className="fw-900" href="#init">
@@ -34,11 +33,11 @@ function Hero() {
                     </Tween>
 
                     <div className="hidden md-block">
-                        <a className="fw-900" href="#contacto">
-                            CON<br />
-                            TAC<br />
-                            TAR<br />
-                        </a>
+                        <div className="rotate-20 bg-black br-round flex justify-center items-center" style={{width: "8em", height: "8em"}}>
+                            <a className="fw-900 white " href="#contacto">
+                                CONTACTAME
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

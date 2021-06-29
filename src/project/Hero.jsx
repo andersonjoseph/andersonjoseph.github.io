@@ -12,7 +12,7 @@ function Hero(props) {
           </h1>
           <ul className="flex justify-center">
             {
-              props.technologies.map((tech) => <li className="mx-2 bg-black p-2 br-16">{tech}</li> )
+              props.technologies.map((tech) => <li className="mx-2 bg-black p-2 br-16 white">{tech}</li> )
             }
           </ul>
         </div>

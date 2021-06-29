@@ -52,42 +52,63 @@ function Project(props) {
 
         }
 
-        tl.to(textRef.current, {
-            x: '2000',
-            duration: 1,
-            ease: "back.in",
+
+        tl.to(textRef.current.querySelector("h2"), {
+            y: '100%',
+            duration: .5,
+            ease: "power1.out",
+        });
+
+        tl.to(textRef.current.querySelector("p"), {
+            y: '100%',
+            duration: .5,
+            ease: "power1.out",
             onComplete: animateImage
         });
+
 
     }
 
     return(
         <div className="flex flex-wrap" style={{ marginTop: "10em" }}>
-            {
-                props.offset
-                &&
-                <div className="w-100pc md-w-10pc"></div> 
-            }
-
-            <figure className="w-40pc">
-
+            <figure className="w-40pc h-100vh overflow-hidden">
                 <Link onClick={handleProjectClick} to={props.link}>
-                    <img className="w-100pc h-100pc object-cover" ref={imageRef} alt={props.title} src={props.image} />
+                    <ScrollTrigger start="top center">
+                        <Tween from={{x: 1000, scale: .5}} to={{x: 0, scale: 1}} delay={.5}>
+                            <img className="w-100pc h-100vh object-cover" ref={imageRef} alt={props.title} src={props.image} />
+                        </Tween>
+                    </ScrollTrigger>
                 </Link>
             </figure>
 
-            <div ref={textRef} className="w-100pc md-w-50pc z-10">
+            <div ref={textRef} className="w-100pc md-w-60pc z-10 text-right flex flex-column justify-between my-8">
+                <div>
+                    <span className="block overflow-hidden">
+                        <h2>
+                            <Link onClick={handleProjectClick} to={props.link} style={{ fontSize: "inherit", color: "inherit", fontFamily: "inherit" }}>
+                                {props.title}
+                            </Link>
+                        </h2>
+                    </span>
 
-                <h2 className="mb-l2">
-                    <Link onClick={handleProjectClick} to={props.link} style={{fontSize: "inherit", color: "inherit", fontFamily: "inherit"}}>
-                        {props.title}
+                    <span className="block overflow-hidden">
+                        <ScrollTrigger start="top center">
+                            <Tween from={{ y: 100 }} to={{ y: 0 }}>
+                                <p className="w-50pc ml-auto">
+                                    {props.shortDesc}
+                                </p>
+                            </Tween>
+                        </ScrollTrigger>
+                    </span>
+                </div>
+
+                <div>
+                    <Link onClick={handleProjectClick} to={props.link} className="details-link">
+                        Ver Detalles
                     </Link>
-                </h2>
+                </div>
 
-                <Link onClick={handleProjectClick} to={props.link} className="details-link">
-                    Ver Detalles
-                </Link>
-
+                
             </div>
         </div>
     )
@@ -100,7 +121,7 @@ function Projects() {
         <div className="relative" style={{marginTop: "10em"}}>
             <ScrollTrigger start="-200px center" end="bottom top" scrub={1}>
                 <Tween from={{ x: -90 }} to={{ x: -600 }} >
-                        <h2 className="absolute left-0 top-0 opacity-10 z--1" style={{fontSize: "6em", whiteSpace: "nowrap" }}>
+                        <h2 className="absolute left-0 top-0 opacity-10 z--1 uppercase" style={{fontSize: "6em", whiteSpace: "nowrap" }}>
                             Proyectos -
                             Proyectos -
                             Proyectos -
@@ -110,21 +131,26 @@ function Projects() {
                 </Tween>
             </ScrollTrigger>
 
-            <h2 className="text-center">Proyectos</h2>
+            <h2 className="text-center uppercase">Proyectos</h2>
 
-            <div style={{transition: "1s", backgroundColor: "#161517"}} id="full-container" className="fixed-center">
+            <div style={{transition: "1s", backgroundColor: "#FFEC06"}} id="full-container" className="fixed-center z-100">
 
             </div>
 
-            <div style={{ marginTop: "10em", marginBottom: "10em" }}>
+            <div style={{ marginTop: "10em", marginBottom: "10em", scrollSnapType: "y mandatory" }}>
 
-                <ScrollTrigger start="-200px center" end="center center" scrub={1}>
-                    <Tween from={{x: -500, opacity: 0}} to={{x:0, opacity: 1}}>
-                        <div>
-                            <Project title="Otra Mirada" link="/proyecto/otramirada" image="/images/projects/otramirada/cover.webp" />
-                        </div>
-                    </Tween>
-                </ScrollTrigger>
+                <Project
+                    title="Otra Mirada"
+                    link="/proyecto/otramirada"
+                    image="/images/projects/otramirada/cover.webp"
+                    shortDesc="El proyecto Otra Mirada es una galería interactiva que permite ver las imágenes de una fotógrafa de forma dinámica y con una experiencia inmersiva"
+                />
+                <Project
+                    title="Otra Mirada"
+                    link="/proyecto/otramirada"
+                    image="/images/projects/otramirada/cover.webp"
+                    shortDesc="El proyecto Otra Mirada es una galería interactiva que permite ver las imágenes de una fotógrafa de forma dinámica y con una experiencia inmersiva"
+                            />
 
             </div>
 

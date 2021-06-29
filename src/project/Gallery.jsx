@@ -3,26 +3,28 @@ import { Tween, ScrollTrigger } from 'react-gsap';
 function Gallery(props) {
   return (
     <>
-      <ScrollTrigger start="center center" scrub={.5} pin>
-        <Tween from={{ scale: 5 }} to={{ scale: 1 }}>
-          <div className="flex flex-wrap">
-            <div className="w-33pc">
+      <ScrollTrigger start="top top" scrub={.5} pin>
+        <Tween from={{ scale: 2.5 }} to={{ scale: 1 }}>
+          <div style={{transformOrigin: "top"}} className="flex flex-wrap h-100vh items-center">
+
+            <div className="w-20pc">
               <img alt="galeria de proyecto1" className="object-cover" src={props.images[1]} />
               <img alt="galeria de proyecto2" className="object-cover" src={props.images[3]} />
             </div>
 
-            <div className="w-33pc flex-column self-center">
+            <div className="w-60pc flex-column self-center">
               <img alt="galeria de proyecto3" className="object-cover" src={props.images[0]} />
             </div>
 
-            <div className="w-33pc">
+            <div className="w-20pc">
               <img alt="galeria de proyecto4" className="object-cover" src={props.images[2]} />
             </div>
+
           </div>
         </Tween>
       </ScrollTrigger>
 
-      <video autoplay muted loop className="mb-l10">
+      <video autoPlay muted loop className="mb-l5">
         <source src={props.video} type="video/webm" />
       </video>
 
