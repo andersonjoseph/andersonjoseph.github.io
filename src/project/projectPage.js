@@ -1,5 +1,4 @@
 import Contact from '../Contact';
-import { useEffect } from 'react';
 
 import { Tween, ScrollTrigger } from 'react-gsap';
 

@@ -71,7 +71,7 @@ function Project(props) {
 
     return(
         <div className="flex flex-wrap" style={{ marginTop: "10em" }}>
-            <figure className="w-40pc h-100vh overflow-hidden">
+            <figure className="w-50pc h-100vh overflow-hidden">
                 <Link onClick={handleProjectClick} to={props.link}>
                     <ScrollTrigger start="top center">
                         <Tween from={{x: 1000, scale: .5}} to={{x: 0, scale: 1}} delay={.5}>
@@ -81,7 +81,7 @@ function Project(props) {
                 </Link>
             </figure>
 
-            <div ref={textRef} className="w-100pc md-w-60pc z-10 text-right flex flex-column justify-between my-8">
+            <div ref={textRef} className="w-100pc px-l5 md-w-50pc z-10 text-right flex flex-column justify-between my-8">
                 <div>
                     <span className="block overflow-hidden">
                         <h2>
@@ -92,8 +92,8 @@ function Project(props) {
                     </span>
 
                     <span className="block overflow-hidden">
-                        <ScrollTrigger start="top center">
-                            <Tween from={{ y: 100 }} to={{ y: 0 }}>
+                        <ScrollTrigger start="-=40% center" >
+                            <Tween from={{ y: "100%" }} to={{ y: 0 }}>
                                 <p className="w-50pc ml-auto">
                                     {props.shortDesc}
                                 </p>
@@ -121,7 +121,7 @@ function Projects() {
         <div className="relative" style={{marginTop: "10em"}}>
             <ScrollTrigger start="-200px center" end="bottom top" scrub={1}>
                 <Tween from={{ x: -90 }} to={{ x: -600 }} >
-                        <h2 className="absolute left-0 top-0 opacity-10 z--1 uppercase" style={{fontSize: "6em", whiteSpace: "nowrap" }}>
+                        <h2 className="absolute left-0 top-0 opacity-20 z--1 uppercase" style={{fontSize: "6em", whiteSpace: "nowrap" }}>
                             Proyectos -
                             Proyectos -
                             Proyectos -
@@ -131,13 +131,13 @@ function Projects() {
                 </Tween>
             </ScrollTrigger>
 
-            <h2 className="text-center uppercase">Proyectos</h2>
+            <h2 className="text-center uppercase" id="proyectos">Proyectos</h2>
 
             <div style={{transition: "1s", backgroundColor: "#FFEC06"}} id="full-container" className="fixed-center z-100">
 
             </div>
 
-            <div style={{ marginTop: "10em", marginBottom: "10em", scrollSnapType: "y mandatory" }}>
+            <div style={{ marginTop: "10em", marginBottom: "10em" }}>
 
                 <Project
                     title="Otra Mirada"

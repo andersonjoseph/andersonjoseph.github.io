@@ -23,9 +23,6 @@ function IndexPage() {
       <Services />
       <Projects />
       <Contact />
-      <div className="text-center" style={{marginTop: "10em"}}>
-          <small>2021 Anderson Joseph</small>
-      </div>
     </div>
   )
 

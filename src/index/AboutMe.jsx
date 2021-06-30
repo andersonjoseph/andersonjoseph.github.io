@@ -1,10 +1,9 @@
 import { Tween, ScrollTrigger } from 'react-gsap';
-import BlurryTilt from "../BlurryTilit";
 
 function AboutMe() {
 
     return(
-        <div id="init" className="flex flex-wrap" style={{marginTop: "10em"}}>
+        <div id="me" className="flex flex-wrap px-l5 h-100vh" style={{marginTop: "10em"}}>
 
             <div className="w-100pc md-w-50pc">
                 <ScrollTrigger start="-200px center" end="200px center" scrub={1}>
@@ -21,11 +20,21 @@ function AboutMe() {
             </div>
 
             <ScrollTrigger start="top bottom" end="bottom top" scrub={1}>
-                <Tween from={{ y: 0 }} to={{ y: -100 }} duration={.5}>
-                    <figure className="w-100pc md-w-50pc m-0 relative">
-                        <BlurryTilt src="images/rocket.png" />
-                    </figure>
-                </Tween>
+                <figure className="w-100pc md-w-50pc m-0 relative pl-9">
+
+                    <Tween from={{ y: 0 }} to={{ y: -100 }} duration={2}>
+                        <img className="absolute" src="/images/about1.webp" alt="" />
+                    </Tween>
+
+                    <Tween from={{ y: 0 }} to={{ y: -400 }} duration={1}>
+                        <img className="absolute opacity-50" src="/images/about2.webp" alt="" />
+                    </Tween>
+
+                    <Tween from={{ y: 0 }} to={{ y: -400 }} duration={.5}>
+                        <img className="absolute" src="/images/about3.webp" alt="" />
+                    </Tween>
+
+                </figure>
             </ScrollTrigger>
 
         </div>

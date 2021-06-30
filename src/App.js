@@ -1,16 +1,17 @@
 import './App.css';
 
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import { CSSTransition } from 'react-transition-group';
 
 import IndexPage from './index/indexPage';
 import ProjectPage from './project/projectPage';
+import Header from './Header';
 
 import { gsap } from 'gsap';
 import StandaloneScrollTrigger from 'gsap/ScrollTrigger';
+import { useEffect, useState, useRef } from 'react';
 gsap.registerPlugin(StandaloneScrollTrigger);
-
 
 function AnimatedRoute(props) {
 
@@ -42,46 +43,64 @@ const otraMiradaData = {
     video: ['/images/projects/otramirada/vid.mp4']
 }
 
+function HomeAnimation(props) {
+
+    const animationRef = useRef();
+
+    useEffect(() => {
+        const tl = gsap.timeline();
+
+        tl.to(animationRef.current, {
+            width: '100%',
+            duration: 1
+        });
+
+        tl.to(animationRef.current.querySelector("div"), {
+            width: '100%',
+            duration: 1
+        }, "-=0.5");
+
+        tl.to(animationRef.current, {
+            width: '0',
+            left: 'initial',
+            duration: .5,
+            onComplete: props.onComplete
+        }, "+=2.5");
+
+    }, [props.showAnimation, props.onComplete])
+
+    return (
+        <div ref={animationRef} style={{width: 0}} className="fixed-full bg-black z-100">
+            <div style={{ width: 0, backgroundColor: "#998c00" }} className="absolute-full">
+            </div>
+        </div>
+    )
+}
+
 function App() {
 
+    const [showHomeAnimation, setShowHomeAnimation] = useState(false);
 
-    function handleExit() {
-        console.log('xx');
-        StandaloneScrollTrigger.getAll().forEach(t => { console.log(t)});
-    }
-
-    function handleEnter() {
-        console.log('yy');
-        setTimeout(() => StandaloneScrollTrigger.refresh(), 3000)
+    function homeTransition() {
+        setShowHomeAnimation(true);
     }
 
     return (
-        <div className="App p-4 md-px-l5">
+        <div className="App">
 
-            <Router>
-                <div className="flex justify-between py-2 sticky z-100">
-                    <div>
-                        <Link className="underline" to="/">
-                            <strong>Andersonweb.dev</strong>
-                        </Link>
-                    </div>
+            {
+                showHomeAnimation && ( <HomeAnimation showAnimation={showHomeAnimation} onComplete={()=> setShowHomeAnimation(false) } /> )
+            }
 
-                    <div>
-                        <Link className="mx-5 hover-underline" to="#">Proyectos</Link>
-                        <Link className="mx-5 hover-underline" to="#">Sobre Mi</Link>
-                        <Link className="ml-5 hover-underline" to="#">Contacto</Link>
-                    </div>
-                </div>
+            <Header homeTransition={homeTransition} />
 
-                <AnimatedRoute onEntered={handleEnter} onExit={handleExit} path="/">
-                    <IndexPage />
-                </AnimatedRoute>
+            <AnimatedRoute path="/" exact>
+                <IndexPage />
+            </AnimatedRoute>
 
-                <AnimatedRoute onEntered={handleEnter} onExit={handleExit} path="/proyecto/otramirada">
-                    <ProjectPage data={otraMiradaData} />
-                </AnimatedRoute>
-            </Router>
-
+            <AnimatedRoute path="/proyecto/otramirada" exact>
+                <ProjectPage data={otraMiradaData} />
+            </AnimatedRoute>
         </div>
     );
 }
