@@ -1,15 +1,57 @@
 import { Tween } from 'react-gsap';
 
-function Hero() {
-    return (
-        <div className="flex flex-wrap h-100vh items-center bg-no-repeat bg-r px-l5" style={{backgroundImage: 'url(images/header1.webp)', backgroundColor: "#ecdb0b", backgroundSize: '50em'}}>
+import { gsap } from 'gsap';
+import { TextPlugin } from 'gsap/TextPlugin';
+import { useState, useEffect } from 'react';
+gsap.registerPlugin(TextPlugin);
 
-            <div>
+class CircularList {
+
+    constructor(arr) {
+        this.arr = arr;
+        this.i = 0;
+        this.current = arr[0];
+        this.length = arr.length;
+    }
+
+    next() {
+
+        if(++this.i >= this.length) {
+            this.i = 0;
+        }
+
+        this.current = this.arr[this.i];
+        
+        return this.current;
+    }
+
+}
+
+function Hero() {
+
+    const [brandText, setBrandText] = useState('marcas creativas');
+
+    useEffect(() => {
+
+        const brandTexts = new CircularList(['creativos', 'músicos', 'streamers', 'creadores', 'agencias', 'estudios', 'diseñadores']);
+        const interval = setInterval(() => {
+            setBrandText(brandTexts.next());
+        }, 3000);
+        return () => clearInterval(interval);
+    }, []);
+
+
+    return (
+        <div className="flex flex-wrap md-h-100vh items-center bg-no-repeat bg-r px-5 md-px-l5" style={{backgroundImage: 'url(images/header1.webp)', backgroundColor: "#ecdb0b", backgroundSize: '50em'}}>
+
+            <div className="w-100pc">
                 <div className="hero-title flex flex-wrap">
                     <div className="md-w-60pc">
 
                         <Tween from={{opacity: 0, y: 50}} to={{y: 0, opacity: 1}} duration={2}>
-                            <h1 className="header-title text-stroke-white">Desarrollo web para marcas creativas</h1>
+                            <h1 className="header-title text-stroke-white">
+                                Desarrollo web para <br/> <Tween to ={{text: brandText}}><span style={{fontSize: 'inherit'}}>marcas creativas</span></Tween>
+                            </h1>
                         </Tween>
 
                     </div>

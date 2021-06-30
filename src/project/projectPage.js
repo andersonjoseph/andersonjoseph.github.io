@@ -12,7 +12,7 @@ function ProjectPage(props) {
     <div>
       <Hero technologies={props.data.technologies} cover={props.data.cover} image={props.data.image} />
 
-      <div className="flex mt-l5 h-100vh">
+      <div className="flex mt-l5 h-75vh px-5 md-px-0">
         <div className="md-w-10pc"></div>
         <div className="md-w-40pc">
           <ScrollTrigger start="top center">
@@ -32,6 +32,22 @@ function ProjectPage(props) {
               </Tween>
             </span>
           </ScrollTrigger>
+
+          <br/>
+
+          <ScrollTrigger start="-=300% center">
+            <span className="block overflow-hidden">
+              <Tween from={{y: "100%"}} to={{y: 0}} delay={.5}>
+                <a target="_blank" rel="noreferrer" href={props.data.link} className="button">
+                  Visitar sitio
+                </a>
+              </Tween>
+            </span>
+          </ScrollTrigger>
+
+
+
+
 
         </div>
       </div>

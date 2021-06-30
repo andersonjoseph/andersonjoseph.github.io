@@ -45,6 +45,9 @@ function Project(props) {
                         fullContainer.classList.replace("fixed-center", "fixed-full");
                         imageRef.current.style.transition = "1s";
                         imageRef.current.style.opacity = .1;
+                        imageRef.current.style.objectFill = "object-cover";
+                        imageRef.current.style.width = "100vw";
+                        imageRef.current.style.height = "100vh";
                         setTimeout(() => window.scrollTo(0, 0), 1000);
                     } 
                 }
@@ -71,17 +74,17 @@ function Project(props) {
 
     return(
         <div className="flex flex-wrap" style={{ marginTop: "10em" }}>
-            <figure className="w-50pc h-100vh overflow-hidden">
+            <figure className="md-w-50pc md-h-100vh overflow-hidden">
                 <Link onClick={handleProjectClick} to={props.link}>
                     <ScrollTrigger start="top center">
                         <Tween from={{x: 1000, scale: .5}} to={{x: 0, scale: 1}} delay={.5}>
-                            <img className="w-100pc h-100vh object-cover" ref={imageRef} alt={props.title} src={props.image} />
+                            <img className="w-100pc md-h-100vh object-cover" ref={imageRef} alt={props.title} src={props.image} />
                         </Tween>
                     </ScrollTrigger>
                 </Link>
             </figure>
 
-            <div ref={textRef} className="w-100pc px-l5 md-w-50pc z-10 text-right flex flex-column justify-between my-8">
+            <div ref={textRef} className="w-100pc px-5 md-px-l5 md-w-50pc z-10 text-right flex flex-column justify-between my-8">
                 <div>
                     <span className="block overflow-hidden">
                         <h2>
@@ -91,10 +94,10 @@ function Project(props) {
                         </h2>
                     </span>
 
-                    <span className="block overflow-hidden">
-                        <ScrollTrigger start="-=40% center" >
+                    <span className="block overflow-hidden mb-5">
+                        <ScrollTrigger start="-=80% center" >
                             <Tween from={{ y: "100%" }} to={{ y: 0 }}>
-                                <p className="w-50pc ml-auto">
+                                <p className="md-w-50pc ml-auto">
                                     {props.shortDesc}
                                 </p>
                             </Tween>
@@ -103,7 +106,7 @@ function Project(props) {
                 </div>
 
                 <div>
-                    <Link onClick={handleProjectClick} to={props.link} className="details-link">
+                    <Link onClick={handleProjectClick} to={props.link} className="details-link button">
                         Ver Detalles
                     </Link>
                 </div>
@@ -145,12 +148,6 @@ function Projects() {
                     image="/images/projects/otramirada/cover.webp"
                     shortDesc="El proyecto Otra Mirada es una galería interactiva que permite ver las imágenes de una fotógrafa de forma dinámica y con una experiencia inmersiva"
                 />
-                <Project
-                    title="Otra Mirada"
-                    link="/proyecto/otramirada"
-                    image="/images/projects/otramirada/cover.webp"
-                    shortDesc="El proyecto Otra Mirada es una galería interactiva que permite ver las imágenes de una fotógrafa de forma dinámica y con una experiencia inmersiva"
-                            />
 
             </div>
 

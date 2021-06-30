@@ -1,6 +1,6 @@
 import './App.css';
 
-import { Route } from 'react-router-dom';
+import { Route, useRouteMatch } from 'react-router-dom';
 
 import { CSSTransition } from 'react-transition-group';
 
@@ -40,7 +40,8 @@ const otraMiradaData = {
     title: "Otra Mirada",
     desc: "El proyecto Otra Mirada es una galería interactiva que permite ver las imágenes de una fotógrafa de forma dinámica y con una experiencia inmersiva. Está construida con tecnologías modernas y corre sobre WordPress para facilitar la administración y la subida de archivos",
     images: ['/images/projects/otramirada/3.webp', '/images/projects/otramirada/2.webp', '/images/projects/otramirada/4.webp', '/images/projects/otramirada/cover.webp' ],
-    video: ['/images/projects/otramirada/vid.mp4']
+    video: ['/images/projects/otramirada/vid.mp4'],
+    link: 'http://andersonwebdev.byethost15.com/otramirada/'
 }
 
 function HomeAnimation(props) {
@@ -71,7 +72,7 @@ function HomeAnimation(props) {
 
     return (
         <div ref={animationRef} style={{width: 0}} className="fixed-full bg-black z-100">
-            <div style={{ width: 0, backgroundColor: "#998c00" }} className="absolute-full">
+            <div style={{ width: 0, background: "url('images/background-loader-1.webp'"}} className="absolute-full overflow-hidden bg-cover bg-no-repeat bg-c bg-black">
             </div>
         </div>
     )
@@ -81,9 +82,26 @@ function App() {
 
     const [showHomeAnimation, setShowHomeAnimation] = useState(false);
 
+    let match = useRouteMatch("/");
     function homeTransition() {
+        if(match.isExact){
+            return;
+        } 
+
         setShowHomeAnimation(true);
     }
+
+    function refreshScrollTrigger() {
+        setTimeout(() => {
+            StandaloneScrollTrigger.refresh();
+        }, 4000);
+    }
+
+    useEffect(() => {
+        window.addEventListener('load', refreshScrollTrigger);
+
+        return () => window.removeEventListener('load', refreshScrollTrigger);
+    }, []);
 
     return (
         <div className="App">

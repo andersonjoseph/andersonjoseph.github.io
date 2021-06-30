@@ -5,15 +5,15 @@ function CTA() {
     <ScrollTrigger start="top top" end="+=2000" scrub={.5} pin>
       <Tween to={{ x: "-100vw" }}>
         <div className="h-100vh flex">
-          <div style={{ backgroundColor: "#222725" }} className="w-100vw h-100pc flex-shrink-0 flex items-center pl-l7">
+          <div className="w-100vw h-100pc flex-shrink-0 flex items-center pl-5 md-pl-l7 bg-black">
             <h2 className="w-40pc white">
-              ¿Quieres un sitio web que te destaque de la competencia?
+              ¿Tienes una idea única?
             </h2>
           </div>
 
-          <div className="w-100vw h-100pc bg-white flex-shrink-0 flex items-center pl-l7">
+          <div className="w-100vw h-100pc bg-white flex-shrink-0 flex items-center pl-5 md-pl-l7">
             <h2 className="w-40pc black">
-              ¿Quieres un sitio web que impresione a tus clientes?
+              Hagamos un website único
             </h2>
           </div>
         </div>

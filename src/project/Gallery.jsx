@@ -7,16 +7,16 @@ function Gallery(props) {
         <Tween from={{ scale: 2.5 }} to={{ scale: 1 }}>
           <div style={{transformOrigin: "top"}} className="flex flex-wrap h-100vh items-center">
 
-            <div className="w-20pc">
+            <div className="md-w-20pc">
               <img alt="galeria de proyecto1" className="object-cover" src={props.images[1]} />
               <img alt="galeria de proyecto2" className="object-cover" src={props.images[3]} />
             </div>
 
-            <div className="w-60pc flex-column self-center">
+            <div className="w-50pc md-w-60pc flex-column self-center">
               <img alt="galeria de proyecto3" className="object-cover" src={props.images[0]} />
             </div>
 
-            <div className="w-20pc">
+            <div className="w-50pc md-w-20pc">
               <img alt="galeria de proyecto4" className="object-cover" src={props.images[2]} />
             </div>
 

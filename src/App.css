@@ -23,7 +23,7 @@ h2 {
     font-size: 4em;
 }
 
-p,span,small,label, button, input, textarea, li {
+p,small,label, button, input, textarea, li {
     font-family: 'Open Sans', sans-serif;
     color: #222725;
 }
@@ -58,6 +58,7 @@ a {
     color: #222725;
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
+    font-size: 1em;
 }
 
 li {
@@ -122,6 +123,7 @@ li {
     mix-blend-mode: exclusion;
     filter: invert(1) contrast(1);
     background-color: #0800ff;
+    background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
 }
@@ -131,9 +133,23 @@ li {
 }
 
 .contact-button:hover {
-    transform: rotate(320deg) scale(1.2) !important;
+    transform: rotate(340deg) scale(1.2) !important;
     background-color: white !important;
     color: black !important
+}
+
+.button {
+    background-color: #0c0e0d;
+    font-size: 1em;
+    padding: 1em 2em 1em 2em;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+    opacity: 1;
 }
 
 
@@ -145,7 +161,7 @@ li {
       font-size: 2vw;
   }
 
-  p,span,small,label, button, input, textarea, li, a {
+  p,small,label, button, input, textarea, li, a {
       font-size: 2em;
   }
 
@@ -156,6 +172,10 @@ li {
   
   .details-link {
     margin-left: 0;
+  }
+
+  .button {
+      font-size: 2em;
   }
 
 }

@@ -13,7 +13,7 @@ function Contact() {
     return(
         <>
             <ScrollTrigger onEnter={changeBgDarkColor} onLeaveBack={changeBgLightColor} onLeave={changeBgLightColor}>
-                <div id="contacto" className="flex flex-wrap px-l5" style={{ marginTop: "10em" }}>
+                <div id="contacto" className="flex flex-wrap px-5 md-px-l5" style={{ marginTop: "30em" }}>
 
                     <div className="w-100pc md-w-80pc">
                         <div className="subtitle white">
