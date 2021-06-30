@@ -5,13 +5,12 @@ function Services() {
     return(
         <div className="flex flex-wrap" style={{marginTop: "10em"}}>
 
-            <div className="w-100pc md-w-10pc"></div> 
 
-            <div className="w-100pc md-w-80pc">
+            <div className="text-center uppercase">
                 <div className="subtitle">
                     <ScrollTrigger>
                         <Tween from={{ x: -1000 }} stagger={0.2}>
-                            <SplitChars wrapper={<p className="inline-block" />}>
+                            <SplitChars wrapper={<span className="inline-block black" />}>
                                 Servicios
                             </SplitChars>
                         </Tween>
