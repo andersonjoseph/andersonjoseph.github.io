@@ -123,7 +123,7 @@ export function Projects() {
 	  technologiesLeft={['NestJS', 'MongoDB', 'TypeScript']}
 	  technologiesRight={['PostgreSQL', 'React', 'TailwindCSS']}
 	  image='./liiive.webp'
-	  link='https://github.com/andersonjoseph/liiive-reviews'
+	  link='https://github.com/andersonjoseph/liiive-reviews-front'
 	/>
 
       </div>
