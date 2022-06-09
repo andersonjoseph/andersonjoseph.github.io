@@ -40,7 +40,7 @@ function Project({title, description, technologiesLeft, technologiesRight, image
 	  </div>
 	  <div className='md:col-start-4 col-span-3'>
 	    <img alt={title} src={image} className="w-full mb-5" />
-	    <a className='text-black' href={link} rel='noreferrer' target="_blank">VER EN GITHUB 🡭</a>
+	    <a className='text-black' href={link} rel='noreferrer' target="_blank">SEE ON GITHUB 🡭</a>
 	  </div>
 	</div>
       </animated.div>
