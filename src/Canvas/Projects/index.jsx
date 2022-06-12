@@ -20,10 +20,10 @@ function Project({image, elementId}) {
 
   useEffect(() => {
     const scaleW = position.width * 0.25;
-    const scaleH = scaleW * 0.4;
+    const scaleH = position.height * 0.25
 
     meshRef.current.scale.set(scaleW, scaleH, scaleW);
-    meshRef.current.position.set(position.x, position.y, 220);
+    meshRef.current.position.set(position.x, position.y, 15);
   }, [size]);
 
   const randomFactor = Math.random();
