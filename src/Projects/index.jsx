@@ -1,53 +1,7 @@
 import {useMouseStore, useProjectStore} from "../useStore";
 import {useSpring, animated, config} from "@react-spring/web";
-import {useState, useCallback} from 'react';
+import {useCallback} from 'react';
 import ScrollTrigger from 'react-scroll-trigger';
-
-function Project({title, description, technologiesLeft, technologiesRight, image, link, id}) {
-
-  const [isActive, setIsActive] = useState(false);
-
-  const contentProps = useSpring({
-    to: { 
-      height: isActive ? '100%' : '0em', 
-      padding: isActive ? '2em' : '0em' ,
-    }, 
-  });
-
-  function toggleContent() {
-    setIsActive((value => !value));
-  }
-
-  return(
-    <>
-      <span id={id} onClick={toggleContent} className='md:col-start-2 col-span-4 h-40 md:h-80 w-full cursor-pointer' />
-
-      <animated.div style={contentProps} className='bg-white md:col-start-1 md:col-span-6 overflow-hidden'>
-	<div className='grid grid-cols-2 md:grid-cols-6'>
-	  <strong className='text-black col-span-2'>PROJECT: </strong>
-	  <p className='text-black md:col-span-1 mb-5'>{title}</p>
-	  <div className='col-span-2'>
-	    <p className='text-black mb-5'>{description}</p>
-	    <strong className='text-black'>Technologies used:</strong>
-	    <div className='flex gap-32 mb-5'>
-	      <ul className='ml-5 list-disc'>
-		{technologiesLeft.map((technology, i) =><li key={`techLeft-${i}`} className="text-black">{technology}</li>) }
-	      </ul>
-	      <ul className='list-disc'>
-		{technologiesRight.map((technology, i) =><li key={`techRight-${i}`} className="text-black">{technology}</li>) }
-	      </ul>
-	    </div>
-	  </div>
-	  <div className='md:col-start-4 col-span-3'>
-	    <img alt={title} src={image} className="w-full mb-5" />
-	    <a className='text-black' href={link} rel='noreferrer' target="_blank">SEE ON GITHUB 🡭</a>
-	  </div>
-	</div>
-      </animated.div>
-    </>
-  )
-
-}
 
 const updateMousePositionSelector = (state) => state.updateMousePosition;
 const setIsActiveSelector = (state) => state.setIsActive;
@@ -91,41 +45,45 @@ export function Projects() {
       </div>
 
       <div 
-	  onMouseEnter={() => setIsActive(true)} 
-	  onMouseLeave={() => setIsActive(false)} 
-	  onMouseMove={updateMouseStore} 
-	  className='grid md:grid-cols-6'>
+	onMouseEnter={() => setIsActive(true)} 
+	onMouseLeave={() => setIsActive(false)} 
+	onMouseMove={updateMouseStore} 
+	className='grid md:grid-cols-6 md:gap-2 gap-6 px-3 md:p-0'>
 
-	<Project
-	  id="project-espera"
-	  title="ESPERA"
-	  description="A dashboard created to manage waitlists with built in referral"
-	  technologiesLeft={['NestJS', 'MongoDB', 'Auth0']}
-	  technologiesRight={['TypeScript', 'React', 'TailwindCSS']}
-	  image='./espera.webp'
-	  link='https://github.com/andersonjoseph/liiive-reviews'
-	/>
+	<a target='_blank' rel='noreferrer' href="https://github.com/andersonjoseph/espera" id='project-espera' 
+	  className='h-40 md:col-start-2 col-span-2 md:h-80 w-full cursor-pointer border-2 p-3 flex flex-col justify-between'>
+	  <h3>ESPERA-WAITLIST</h3>
+	  <div>
+	    <small>#001</small>
+	    <br/>
+	    <small>Internal dashboard to manage waitlist with built in referral system</small>
+	  </div>
+	</a>
 
-	<Project
-	  id="project-papr"
-	  title="PAPR-NEST"
-	  description="MongoDB TypeScript-aware Models for NestJS"
-	  technologiesLeft={['NestJS', 'MongoDB', 'TypeScript']}
-	  technologiesRight={[]}
-	  image='./papr.webp'
-	  link='https://github.com/andersonjoseph/papr-nest'
-	/>
+	<a target='_blank' rel='noreferrer' href='https://github.com/andersonjoseph/papr-nest' id='project-papr' 
+	  className='h-40 md:col-start-4 col-span-2 md:h-80 w-full cursor-pointer border-2 p-3 flex flex-col justify-between'>
+	  <h3>PAPR=NEST</h3>
+	  <div>
+	    <small>#002</small>
+	    <br/>
+	    <small>MongoDB TypeScript-aware Models for NestJS</small>
+	  </div>
+	</a>
 
-	<Project
-	  id="project-liiive"
-	  title="LIIIVE REVIEWS"
-	  description="Liiive Reviews is an app for writting reviews of Goliiive Shows"
-	  technologiesLeft={['NestJS', 'MongoDB', 'TypeScript']}
-	  technologiesRight={['PostgreSQL', 'React', 'TailwindCSS']}
-	  image='./liiive.webp'
-	  link='https://github.com/andersonjoseph/liiive-reviews-front'
-	/>
+	<a target='_blank' rel='noreferrer' href='https://github.com/andersonjoseph/liiive-reviews-front' id='project-liiive' 
+	  className='h-40 md:col-start-2 col-span-2 md:h-80 w-full cursor-pointer border-2 p-3 flex flex-col justify-between'>
+	  <h3>LIIIVE REVIEWS</h3>
+	  <div>
+	    <small>#003</small>
+	    <br/>
+	    <small>Liiive Reviews is an app for writting reviews of Goliiive Shows</small>
+	  </div>
+	</a>
 
+
+	<div className='h-40 md:col-start-4 col-span-2 md:h-80 w-full cursor-pointer border-2 p-3 flex items-end'>
+	  <a href='https://github.com/andersonjoseph' target='_blank' rel='noreferrer' className="md:text-6xl font-medium">See More on Github 🡭</a>
+	</div>
       </div>
 
     </ScrollTrigger>
