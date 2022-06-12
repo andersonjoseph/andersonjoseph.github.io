@@ -20,8 +20,8 @@ export function Background() {
 
   const meshRef = useRef(null);
   useLayoutEffect(() =>{
-    meshRef.current.scale.x = size.width + 150;
-    meshRef.current.scale.y = size.height + 150;
+    meshRef.current.scale.x = size.width + 250;
+    meshRef.current.scale.y = size.height + 250;
   }, [size]);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export function Background() {
   });
 
   return (
-    <mesh position={[0,0,-50]} ref={meshRef}>
+    <mesh position={[0,0,-100]} ref={meshRef}>
       <planeBufferGeometry />
       <shaderMaterial args={[{
 	uniforms,
