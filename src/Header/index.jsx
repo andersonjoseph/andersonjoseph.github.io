@@ -41,7 +41,7 @@ export function Header() {
 	  <p>ANDERSON J</p>
 	</div>
 
-	<div className='hidden md:block col-span-2 flex justify-center'>
+	<div className='hidden md:block col-span-2 flex justify-center opacity-0'>
 	  <p><span className='bg-green-400 h-2 w-2 inline-block rounded-full mr-2' />AVAILABLE</p>
 	</div>
 	<div className='col-span-2 md:col-span-1 justify-self-end'>

@@ -28,10 +28,7 @@ export function Contact() {
 
       <div className='px-3 md:px-0 py-4 md:py-8 grid md:grid-cols-6 text-left relative'>
 	<p className='col-start-4 col-span-2 mb-8'>
-	  CURRENTLY I'M LOOKING FOR LONG TERM PROJECTS OR MAYBE JOIN TO AN AWESOME STUDIO/AGENCY/COMPANY. 
-	  <br />
-	  <br />
-	  IF YOU WANT TO WORK TOGETHER OR JUST SAY HI, SEND ME A EMAIL ✌
+	  CURRENTLY I'M NOT AVAILABLE FOR PROJECTS, BUT IF YOU JUST WANT TO SAY HI, SEND ME AN EMAIL ✌
 	</p>
 
 	<div 
