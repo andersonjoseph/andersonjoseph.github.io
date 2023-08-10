@@ -1,33 +1,130 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-html, body {
-  font-size: 1vw;
+body {
+    font-size: 3.2vw;
+    background-color: #131313;
+    height: 100vh;
+    overflow: hidden;
 }
 
-
-h1, h2, h3, h4, p, strong, button, a, label, span, li, small{
-  font-family: 'Poppins', sans-serif;
-  color: white;
+h2 {
+  color: #DBDBD5;
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  font-size: 1.4em;
+  letter-spacing: -0.09em;
+  line-height: 1;
 }
 
-.blog-article .bar{
-  transition: 1s;
-  height: 0%;
+h3 {
+  color: #DBDBD5;
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  font-size: 1;
+  letter-spacing: -0.09em;
+  line-height: 0;
 }
 
-.blog-article:hover .bar{
+p {
+  color: #DBDBD5;
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: bikd
+}
+
+#root {
   height: 100%;
 }
 
-#project-button {
-  transition: 0.5s;
-  opacity: 0;
+button {
+  font-family: 'Inter', sans-serif;
+  background-color: inherit;
+  padding: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  border-radius: 2em;
+  border-style: solid;
+  border-width: .1em;
+  font-size: .25em;
+  position: relative;
+  overflow: hidden;
+  color: #DBDBD5;
+  transition: 1s;
 }
 
-@media (max-width: 768px) { 
-  html, body {
-    font-size: 4vw;
+button:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background-color: #DBDBD5;
+  left: 0;
+  z-index: -1;
+  transition: 1s;
+}
+
+button:hover {
+  color: black;
+}
+
+button:hover:after {
+  height: 100%;
+}
+
+#webgl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+a {
+  color: #DBDBD5;
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  font-size: .25em;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.page {
+  left: 20%;
+}
+
+.page p.article-label {
+  font-size: 0.3em;
+  margin-bottom: 2em;
+}
+.page a.article {
+  font-size: .5em;
+}
+
+svg {
+  width: .1em;
+}
+
+@media only screen and (max-width: 576px) {
+  body {
+    font-size: 6.0vw;
   }
+
+  button {
+    font-size: .5em;
+  }
+
+  .page {
+    left: 2%;
+  }
+
+  .page p.article-label {
+    font-size: 1em;
+    margin-bottom: 2em;
+  }
+  .page a.article {
+    font-size: 1em;
+    line-height: 2;
+  }
+
 }
