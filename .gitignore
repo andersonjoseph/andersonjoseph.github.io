@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Devenv
 .devenv*
 devenv.local.nix
@@ -123,4 +122,3 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
->>>>>>> 79b4bf1 (Initialize project using Create React App)
