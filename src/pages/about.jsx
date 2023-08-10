@@ -17,10 +17,8 @@ export function AboutPage(props) {
       animate={props.isShown ? 'appeared' : 'dissapeared'}
       variants={variants}
     >
-      <p>
-	I'm a software developer with a passion for writing clean code.
-	<br/> 
-	I contribute to open source projects and I love sharing my knowledge creating technical content.
+      <p style={{fontSize: '.5em', lineHeight: 1.2}}>
+	As a seasoned <strong>NodeJS</strong> and <strong>Typescript</strong> developer with over <strong>3 years of experience</strong>, I'm passionate about both coding and community. I've contributed to several <strong>open source projects</strong> and create technical content to help others learn as well. In addition to my development skills, I have experience working with <strong>SaaS products and software agencies</strong>, delivering rock-solid web applications. I specialize in building <strong>APIs</strong> and <strong>microservices</strong>, with a focus on <strong>scalability</strong>and <strong>performance</strong>.
       </p>
     </motion.div>
   )

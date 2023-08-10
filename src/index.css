@@ -114,6 +114,10 @@ svg {
     font-size: .5em;
   }
 
+  p {
+    font-size: .7em !important;
+  }
+
   .page {
     left: 2%;
   }
@@ -126,5 +130,7 @@ svg {
     font-size: 1em;
     line-height: 2;
   }
+
+
 
 }
