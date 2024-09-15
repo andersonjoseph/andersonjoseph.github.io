@@ -1,0 +1,46 @@
+h1, h2, h3 {
+  font-family: "Arimo", sans-serif;
+}
+
+h1 {
+  font-weight: bold
+}
+
+.title {
+  position: relative
+}
+
+.title::after {
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: -2em;
+  top: .3em;
+  position: absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+}
+
+.title.title-green::after {
+  background: #718D43;
+}
+
+.title.title-purple::after {
+  background: #573691;
+}
+
+.title.title-red::after {
+  background: #A72434;
+}
+
+.title.title-yellow::after {
+  background: #FFEF2D;
+}
+
+.arimo {
+  font-family: "Arimo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
