@@ -62,21 +62,23 @@ interface CustomCardProps {
   title: string;
   subtitle?: string;
   children: React.ReactNode;
-  height?: string;
-  ref?: React.RefObject<any>;
+  height?:
+    | string
+    | {
+        base?: string;
+        xs?: string;
+        sm?: string;
+        md?: string;
+        lg?: string;
+        xl?: string;
+      };
 }
 
-function CustomCard({
-  title,
-  subtitle,
-  children,
-  height,
-  ref,
-}: CustomCardProps) {
+function CustomCard({ title, subtitle, children, height }: CustomCardProps) {
   height = height ?? "auto";
 
   return (
-    <Card ref={ref} shadow="sm" padding="md" radius="md" withBorder>
+    <Card shadow="sm" padding="md" radius="md" withBorder>
       <Group justify="space-between">
         <Text size="xs" fw={500}>
           {title}
@@ -119,10 +121,10 @@ function ReachOutLink({ icon, label, href }: ReachOutLinkProps) {
 
 function Main() {
   return (
-    <Grid columns={6}>
-      <Grid.Col span={2}>
+    <Grid>
+      <Grid.Col span={{ base: 12, md: 4 }}>
         <Stack>
-          <CustomCard title="EXPERIENCE" height="50vh">
+          <CustomCard title="EXPERIENCE" height={{ base: "auto", md: "50vh" }}>
             <Experience />
           </CustomCard>
 
@@ -154,16 +156,24 @@ function Main() {
         </Stack>
       </Grid.Col>
 
-      <Grid.Col span={2}>
-        <Grid columns={6}>
-          <Grid.Col span={3}>
-            <CustomCard title="TIMEZONE" subtitle="GMT-4" height="15vh">
+      <Grid.Col span={{ base: 12, md: 4 }}>
+        <Grid>
+          <Grid.Col span={{ base: 12, sm: 6 }}>
+            <CustomCard
+              title="TIMEZONE"
+              subtitle="GMT-4"
+              height={{ base: "auto", md: "15vh" }}
+            >
               <TimezoneClock />
             </CustomCard>
           </Grid.Col>
 
-          <Grid.Col span={3}>
-            <CustomCard title="MODE" subtitle="Hacking" height="15vh">
+          <Grid.Col span={{ base: 12, sm: 6 }}>
+            <CustomCard
+              title="MODE"
+              subtitle="Hacking"
+              height={{ base: "auto", md: "15vh" }}
+            >
               <Text size="xs">
                 In a state of flow, training AI models to assist software
                 engineers.
@@ -171,13 +181,13 @@ function Main() {
             </CustomCard>
           </Grid.Col>
 
-          <Grid.Col span={6}>
-            <CustomCard title="SKILLS" height="31.2vh">
+          <Grid.Col span={12}>
+            <CustomCard title="SKILLS" height={{ base: "auto", md: "31.2vh" }}>
               <Skills />
             </CustomCard>
           </Grid.Col>
 
-          <Grid.Col span={6}>
+          <Grid.Col span={12}>
             <CustomCard title="REACH OUT">
               <Stack>
                 <ReachOutLink
@@ -206,13 +216,13 @@ function Main() {
         </Grid>
       </Grid.Col>
 
-      <Grid.Col span={2}>
+      <Grid.Col span={{ base: 12, md: 4 }}>
         <Stack>
-          <CustomCard title="PROJECTS" height="30vh">
+          <CustomCard title="PROJECTS" height={{ base: "auto", md: "30vh" }}>
             <Projects />
           </CustomCard>
 
-          <CustomCard title="ARTICLES" height="35vh">
+          <CustomCard title="ARTICLES" height={{ base: "auto", md: "35vh" }}>
             <Articles />
           </CustomCard>
         </Stack>
@@ -223,7 +233,7 @@ function Main() {
 
 export default function App() {
   return (
-    <Box mx="15em" mt="md">
+    <Box mx={{ base: "md", lg: "xl", xl: "15em" }} mt="md">
       <Header />
       <Main />
     </Box>
