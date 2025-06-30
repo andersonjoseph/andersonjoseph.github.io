@@ -57,6 +57,13 @@ const experienceItems: ExperienceItemProps[] = [
     description:
       "Initially, I optimized an existing API, boosting its performance by 300% through code refactoring and introduced monitoring systems for optimal performance. Following a promotion, I led the creation of a robust system architecture, managed a backend team of 4 developers, conducted code reviews, and demonstrated strong leadership and communication skills with team members and stakeholders.",
   },
+  {
+    company: "NeoAttack",
+    title: "Full Stack Developer",
+    location: "Madrid - Spain (Remote)",
+    description:
+      "I played a key role in building both a student residence search platform and an image marketplace, authoring comprehensive, user-friendly REST API documentation that streamlined onboarding, boosted team productivity, and enabled ongoing development with minimal guidance.",
+  },
 ];
 
 export function Experience() {
