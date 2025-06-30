@@ -1,6 +1,5 @@
 import {
   Anchor,
-  Burger,
   Group,
   Stack,
   Title,
@@ -14,7 +13,6 @@ import {
   SimpleGrid,
   Badge,
 } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
 import React from "react";
 import {
   IconBrandDiscord,
@@ -29,18 +27,10 @@ import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
 
 function Header() {
-  const [opened, { toggle }] = useDisclosure(false);
-
   return (
     <Box>
       <Flex align="center">
-        <Group
-          gap={5}
-          visibleFrom="xs"
-          justify="space-between"
-          w="100%"
-          align="center"
-        >
+        <Group gap={5} justify="space-between" w="100%" align="center">
           <Stack gap={0}>
             <Title order={1} size="sm" m={0}>
               Anderson Joseph
@@ -50,7 +40,6 @@ function Header() {
             </Text>
           </Stack>
         </Group>
-        <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
       </Flex>
 
       <Divider mt="md" mb="xl" />
