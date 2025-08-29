@@ -41,28 +41,28 @@ const experienceItems: ExperienceItemProps[] = [
     title: "AI Trainer - Software Engineering",
     location: "Remote",
     description:
-      "Trained an AI assistant by providing expert-level human feedback on real-world software engineering tasks, focusing on Go, TypeScript, Python, and SQL. I participated in Reinforcement Learning from Human Feedback (RLHF) workflows to iteratively improve the AI's code generation, debugging, and problem-solving capabilities, while also evaluating and correcting AI-generated code to ensure accuracy and alignment with industry best practices.",
+      "Trained an AI assistant on complex software engineering tasks in Go, TypeScript, Python, and SQL. Leveraged RLHF to enhance AI's code generation, debugging, and problem-solving, ensuring high-quality outputs aligned with industry standards.",
   },
   {
     company: "VisitorEdge",
     title: "Principal Backend Engineer",
     location: "Arizona - US (Remote)",
     description:
-      "Developed a high-performance REST API architecture, incorporating database scaling and server optimization to ensure best performance under high traffic. I created extensive documentation covering the API architecture, data models, and caching mechanisms to facilitate smooth onboarding and future maintenance, and developed a suite of custom tools to automate repetitive tasks like deployments and releases.",
+      "Engineered a high-performance REST API with advanced database scaling and server optimization to handle high traffic. Developed comprehensive documentation and custom automation tools for deployments and releases, streamlining operations.",
   },
   {
     company: "Phase One Ventures",
     title: "Lead Backend Developer",
     location: "Arizona - US (Remote)",
     description:
-      "Initially, I optimized an existing API, boosting its performance by 300% through code refactoring and introduced monitoring systems for optimal performance. Following a promotion, I led the creation of a robust system architecture, managed a backend team of 4 developers, conducted code reviews, and demonstrated strong leadership and communication skills with team members and stakeholders.",
+      "Boosted API performance by 300% through refactoring and implemented monitoring systems. Promoted to lead backend developer, overseeing a team of 4, designing robust architectures, and conducting thorough code reviews.",
   },
   {
     company: "NeoAttack",
     title: "Full Stack Developer",
     location: "Madrid - Spain (Remote)",
     description:
-      "I played a key role in building both a student residence search platform and an image marketplace, authoring comprehensive, user-friendly REST API documentation that streamlined onboarding, boosted team productivity, and enabled ongoing development with minimal guidance.",
+      "Built a student residence search platform and image marketplace from the ground up. Authored detailed REST API documentation that enhanced team productivity and enabled efficient, independent development.",
   },
 ];
 
