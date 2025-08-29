@@ -160,12 +160,11 @@ function Main() {
           <Grid.Col span={{ base: 12, sm: 6 }}>
             <CustomCard
               title="MODE"
-              subtitle="Hacking"
+              subtitle="Traning + Building"
               height={{ base: "auto", md: "15vh" }}
             >
               <Text size="xs">
-                In a state of flow, training AI models to assist software
-                engineers.
+                Training AI models to assist software engineers.
               </Text>
             </CustomCard>
           </Grid.Col>
