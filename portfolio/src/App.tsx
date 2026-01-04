@@ -39,6 +39,19 @@ function Header() {
               Software Developer
             </Text>
           </Stack>
+
+          <Anchor
+            href="mailto:andersonjoseph@mailfence.com"
+            variant="text"
+            underline="always"
+            c="grey"
+            size="sm"
+            display={{ base: "none", sm: "flex" }}
+          >
+            <Group gap="xs">
+              <Text size="sm">andersonjoseph@mailfence.com</Text>
+            </Group>
+          </Anchor>
         </Group>
       </Flex>
 
