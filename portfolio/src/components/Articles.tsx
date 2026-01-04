@@ -31,6 +31,12 @@ function ArticleItem({ title, summary, href }: ArticleItemProps) {
 
 const articles: ArticleItemProps[] = [
   {
+    title: "How I Run LLM Agents in a Secure Nix Sandbox",
+    summary:
+      "Building a secure playground for AI coding agents using Nix and bubblewrap, giving them autonomy without granting unrestricted system access.",
+    href: "https://dev.to/andersonjoseph/how-i-run-llm-agents-in-a-secure-nix-sandbox-1899",
+  },
+  {
     title: "Understanding highWaterMark in Node.js Streams",
     summary:
       "Node.js streams are a powerful tool for handling I/O operations, but they can be tricky to get right. One of the most important concepts to understand is the highWaterMark.",
