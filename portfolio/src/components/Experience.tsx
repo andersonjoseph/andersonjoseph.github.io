@@ -38,31 +38,24 @@ export function ExperienceItem({
 const experienceItems: ExperienceItemProps[] = [
   {
     company: "Outlier.ai",
-    title: "AI Trainer - Software Engineering",
+    title: "Software Engineer",
     location: "Remote",
     description:
-      "Trained an AI assistant on complex software engineering tasks in Go, TypeScript, Python, and SQL. Leveraged RLHF to enhance AI's code generation, debugging, and problem-solving, ensuring high-quality outputs aligned with industry standards.",
-  },
-  {
-    company: "VisitorEdge",
-    title: "Principal Backend Engineer",
-    location: "Arizona - US (Remote)",
-    description:
-      "Engineered a high-performance REST API with advanced database scaling and server optimization to handle high traffic. Developed comprehensive documentation and custom automation tools for deployments and releases, streamlining operations.",
+      "Built internal tools to improve code navigation accuracy across 50+ repositories. Participated in RLHF workflows to enhance AI's code generation capabilities and engineered Docker-based execution pipelines standardizing development environments.",
   },
   {
     company: "Phase One Ventures",
     title: "Lead Backend Developer",
     location: "Arizona - US (Remote)",
     description:
-      "Boosted API performance by 300% through refactoring and implemented monitoring systems. Promoted to lead backend developer, overseeing a team of 4, designing robust architectures, and conducting thorough code reviews.",
+      "Promoted to lead after delivering high-impact features, leading a team of 4 developers across VisitorEdge and other 3 products. Established monitoring dashboards and comprehensive documentation standards, improving issue detection and onboarding efficiency.",
   },
   {
     company: "NeoAttack",
-    title: "Full Stack Developer",
+    title: "Full Stack Engineer",
     location: "Madrid - Spain (Remote)",
     description:
-      "Built a student residence search platform and image marketplace from the ground up. Authored detailed REST API documentation that enhanced team productivity and enabled efficient, independent development.",
+      "Delivered 2 production-ready applications serving 5,000+ monthly active users using ReactJS, NodeJS, and PostgreSQL. Engineered REST API endpoints with OpenAPI documentation and implemented automated testing and deployment workflows using CircleCI and Docker.",
   },
 ];
 
