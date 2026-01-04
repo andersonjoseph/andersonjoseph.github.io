@@ -1,4 +1,4 @@
-import { Flex } from "@mantine/core";
+import { Box } from "@mantine/core";
 import { useEffect, useState } from "react";
 import Clock from "react-clock";
 import "react-clock/dist/Clock.css";
@@ -15,8 +15,15 @@ export function TimezoneClock() {
   }, []);
 
   return (
-    <Flex align="center" justify="center">
-      <Clock value={value} />
-    </Flex>
+    <Box
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100%",
+      }}
+    >
+      <Clock value={value} size={150} />
+    </Box>
   );
 }

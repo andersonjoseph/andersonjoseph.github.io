@@ -61,9 +61,16 @@ interface CustomCardProps {
         lg?: string;
         xl?: string;
       };
+  noScroll?: boolean;
 }
 
-function CustomCard({ title, subtitle, children, height }: CustomCardProps) {
+function CustomCard({
+  title,
+  subtitle,
+  children,
+  height,
+  noScroll = false,
+}: CustomCardProps) {
   height = height ?? "auto";
 
   return (
@@ -77,9 +84,22 @@ function CustomCard({ title, subtitle, children, height }: CustomCardProps) {
         </Text>
       </Group>
       <Divider my="xs" />
-      <ScrollArea offsetScrollbars type="always" h={height} scrollbars="y">
-        {children}
-      </ScrollArea>
+      {noScroll ? (
+        <Box
+          h={height}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {children}
+        </Box>
+      ) : (
+        <ScrollArea offsetScrollbars type="always" h={height} scrollbars="y">
+          {children}
+        </ScrollArea>
+      )}
     </Card>
   );
 }
@@ -113,7 +133,10 @@ function Main() {
     <Grid>
       <Grid.Col span={{ base: 12, md: 4 }}>
         <Stack>
-          <CustomCard title="EXPERIENCE" height={{ base: "auto", md: "50vh" }}>
+          <CustomCard
+            title="EXPERIENCE"
+            height={{ base: "auto", md: "400px", lg: "50vh" }}
+          >
             <Experience />
           </CustomCard>
 
@@ -151,7 +174,8 @@ function Main() {
             <CustomCard
               title="TIMEZONE"
               subtitle="GMT-4"
-              height={{ base: "auto", md: "15vh" }}
+              height={{ base: "200px", md: "220px", lg: "15vh" }}
+              noScroll={true}
             >
               <TimezoneClock />
             </CustomCard>
@@ -161,7 +185,7 @@ function Main() {
             <CustomCard
               title="MODE"
               subtitle="Building AI Tools"
-              height={{ base: "auto", md: "15vh" }}
+              height={{ base: "auto", md: "200px", lg: "15vh" }}
             >
               <Text size="xs">
                 Building tools for AI agents to improve code navigation,
@@ -171,7 +195,10 @@ function Main() {
           </Grid.Col>
 
           <Grid.Col span={12}>
-            <CustomCard title="SKILLS" height={{ base: "auto", md: "31.2vh" }}>
+            <CustomCard
+              title="SKILLS"
+              height={{ base: "auto", md: "250px", lg: "31.2vh" }}
+            >
               <Skills />
             </CustomCard>
           </Grid.Col>
@@ -207,11 +234,17 @@ function Main() {
 
       <Grid.Col span={{ base: 12, md: 4 }}>
         <Stack>
-          <CustomCard title="PROJECTS" height={{ base: "auto", md: "30vh" }}>
+          <CustomCard
+            title="PROJECTS"
+            height={{ base: "auto", md: "240px", lg: "30vh" }}
+          >
             <Projects />
           </CustomCard>
 
-          <CustomCard title="ARTICLES" height={{ base: "auto", md: "35vh" }}>
+          <CustomCard
+            title="ARTICLES"
+            height={{ base: "auto", md: "280px", lg: "35vh" }}
+          >
             <Articles />
           </CustomCard>
         </Stack>
