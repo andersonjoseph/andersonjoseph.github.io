@@ -38,6 +38,13 @@ function ProjectItem({ title, summary, href, image }: ProjectItemProps) {
 
 const projects: ProjectItemProps[] = [
   {
+    title: "searchast",
+    summary:
+      "A syntax-aware code search tool combining grep with AST parsing, improving code pattern matching accuracy over regex-only approaches.",
+    href: "https://github.com/andersonjoseph/searchast",
+    image: sqidsencoder,
+  },
+  {
     title: "shotbit",
     summary:
       "A NodeJS tool that allows you to extract movie scenes/shots easily.",
@@ -63,13 +70,6 @@ const projects: ProjectItemProps[] = [
       "A Fastify plugin for integrating Hashids into your routes, providing an easy way to encode and decode data.",
     href: "https://www.npmjs.com/package/fastify-hashids",
     image: hashids,
-  },
-  {
-    title: "sqidsencoder",
-    summary:
-      "A Go library that provides functionality to encode and decode structs using sqids.",
-    href: "https://github.com/andersonjoseph/sqidsencoder",
-    image: sqidsencoder,
   },
 ];
 
